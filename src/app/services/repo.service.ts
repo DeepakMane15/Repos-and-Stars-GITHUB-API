@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class RepoService {
 api = 'https://api.github.com/users/DeepakMane15/repos'
-token = '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';
+token = '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';
   constructor(private httpClient: HttpClient) { }
   headers = new HttpHeaders()
   .set('content-type','application/json')

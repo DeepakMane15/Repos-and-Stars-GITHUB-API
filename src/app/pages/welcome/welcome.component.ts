@@ -25,7 +25,9 @@ this.reactiveForm = this.formBuilder.group({
 
   onSubmit() {
     if(this.reactiveForm.value['name'] === ''){
+      this.dataSet = [];
       this.error='Please enter repository name';
+
     } else{
       this.error='';
     console.log(this.reactiveForm.value);
@@ -35,7 +37,7 @@ this.reactiveForm = this.formBuilder.group({
     },(err) => {
       if(err.status === 404){
         this.dataSet = [];
-        this.error = this.reactiveForm.value['name']+' Repository does not exists'
+        this.error = this.reactiveForm.value['name']+' repository does not exist'
       }
     })
   }}
