@@ -1,0 +1,28 @@
+<form nz-form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="email" >Repository</nz-form-label>
+    <nz-form-control [nzSpan]="5">
+      <input nz-input  type="text"  name="name" formControlName="name" >
+      <Button class=""   type="submit">submit</Button>
+
+      <div style="color:red;" >
+        {{error}}
+      </div>
+    </nz-form-control>
+
+  </nz-form-item >
+</form>
+<nz-table #basicTable [nzData]="dataSet">
+  <thead>
+    <tr>
+      <th>Name</th>
+       <th>Stars</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{data.name}}</td>
+       <td>{{data.stargazers_count}}</td>
+    </tr>
+  </tbody>
+</nz-table>
